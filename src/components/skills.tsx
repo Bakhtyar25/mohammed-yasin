@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { skills } from "../../data/skills"
+import { motion } from "framer-motion";
+import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { skills } from "../../data/skills";
 
 export default function Skills() {
   const categories = [
@@ -14,7 +14,7 @@ export default function Skills() {
     { id: "database", name: "Database" },
     { id: "devops", name: "DevOps" },
     { id: "other", name: "Other" },
-  ]
+  ];
 
   return (
     <section id="skills" className="py-16 md:py-24 bg-muted/40">
@@ -28,26 +28,41 @@ export default function Skills() {
         >
           <div className="space-y-2">
             <Badge className="px-3 py-1 text-sm">Skills</Badge>
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Technical Expertise</h2>
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+              Technical Expertise
+            </h2>
             <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
               A comprehensive overview of my technical skills and proficiencies
             </p>
           </div>
         </motion.div>
         <div className="mx-auto max-w-5xl py-12">
-          <Tabs defaultValue="all" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 md:grid-cols-6">
-              {categories.map((category) => (
-                <TabsTrigger key={category.id} value={category.id}>
-                  {category.name}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+          <Tabs defaultValue="all" className="w-full !h-auto">
+            <div className="overflow-auto pb-2 -mb-2 ">
+              <TabsList className="inline-flex w-max min-w-full">
+                {categories.map((category) => (
+                  <TabsTrigger
+                    key={category.id}
+                    value={category.id}
+                    className="px-4 py-2"
+                  >
+                    {category.name}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
             {categories.map((category) => (
-              <TabsContent key={category.id} value={category.id} className="mt-6">
+              <TabsContent
+                key={category.id}
+                value={category.id}
+                className="mt-6"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {skills
-                    .filter((skill) => category.id === "all" || skill.category === category.id)
+                    .filter(
+                      (skill) =>
+                        category.id === "all" || skill.category === category.id
+                    )
                     .map((skill, index) => (
                       <motion.div
                         key={skill.name}
@@ -65,7 +80,9 @@ export default function Skills() {
                                   <div
                                     key={i}
                                     className={`w-2 h-2 rounded-full mx-0.5 ${
-                                      i < skill.level ? "bg-primary" : "bg-muted-foreground/20"
+                                      i < skill.level
+                                        ? "bg-primary"
+                                        : "bg-muted-foreground/20"
                                     }`}
                                   />
                                 ))}
@@ -82,5 +99,5 @@ export default function Skills() {
         </div>
       </div>
     </section>
-  )
+  );
 }

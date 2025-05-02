@@ -60,7 +60,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 border-t pt-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} DevPortfolio. All rights reserved.
+          © {new Date().getFullYear()} Mohammed Yassen. All rights reserved.
         </div>
       </div>
     </footer>

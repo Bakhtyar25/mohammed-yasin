@@ -75,7 +75,7 @@ export default function About() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold">20+</div>
+                  <div className="text-4xl font-bold">37+</div>
                   <div className="text-sm text-muted-foreground">Happy Clients</div>
                 </div>
               </CardContent>
@@ -83,7 +83,7 @@ export default function About() {
             <Card>
               <CardContent className="p-6">
                 <div className="text-center">
-                  <div className="text-4xl font-bold">10+</div>
+                  <div className="text-4xl font-bold">20+</div>
                   <div className="text-sm text-muted-foreground">Technologies</div>
                 </div>
               </CardContent>
