@@ -68,8 +68,8 @@ export default function Navbar() {
 
       {/* Mobile Navigation Menu */}
       {isMenuOpen && (
-        <div className="fixed inset-0 top-16 z-50 md:hidden bg-accent">
-          <nav className="container flex flex-col items-center justify-center gap-8 py-8">
+        <div className="fixed inset-0 top-16 z-50 md:hidden ">
+          <nav className="container flex flex-col items-center bg-accent justify-center gap-8 py-8">
             <Link href="#about" className="text-lg font-medium" onClick={() => setIsMenuOpen(false)}>
               About
             </Link>
